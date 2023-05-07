@@ -1,6 +1,7 @@
 .PHONY: login ping
 
 login:
+	chmod 700 -R /root
 	tsh login --proxy=$(TELEPORT) --user $(USER)
 
 ssh.cfg: login
