@@ -24,4 +24,5 @@ COPY LICENSE /
 
 WORKDIR /root
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["/bin/bash"]

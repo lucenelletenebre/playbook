@@ -2,7 +2,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 # SHELL:=/bin/bash
 
-.PHONY: lint clean
+.PHONY: lint clean run rund rund-connect rund-del
 
 lint:
 	clear
@@ -25,4 +25,17 @@ clean:
 run: .build
 	docker run -it --rm \
 	-v $(ROOT_DIR)/home:/root \
+	test /bin/bash
+
+rund: .build
+	docker run -d \
+	--name playbooktest \
+	-v $(ROOT_DIR)/home:/root \
 	test
+rund-connect:
+	docker exec -it \
+	playbooktest \
+	/bin/bash
+rund-del:
+	docker stop playbooktest
+	docker rm playbooktest
