@@ -15,7 +15,7 @@ FROM python:3.11-slim-bullseye
 COPY --from=teleport /src/teleport/tsh /usr/local/bin/
 
 RUN apt-get update \
-    && apt-get install make \
+    && apt-get -y install make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir ansible
