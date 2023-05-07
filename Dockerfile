@@ -20,6 +20,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir ansible
 
+COPY LICENSE /
+
 WORKDIR /root
 
 ENTRYPOINT ["/bin/bash"]
