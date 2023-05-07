@@ -15,7 +15,7 @@ FROM python:3.11-slim-bullseye
 COPY --from=teleport /src/teleport/tsh /usr/local/bin/
 
 RUN apt-get update \
-    && apt-get -y install make jq \
+    && apt-get -y install make jq openssh-client\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir ansible
