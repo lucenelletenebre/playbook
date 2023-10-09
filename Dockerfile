@@ -10,7 +10,7 @@ RUN apk --no-cache add curl \
 
 # -------------------------------------------------------------------
 
-FROM python:3.11-slim-bullseye
+FROM python:3.12-slim-bullseye
 
 COPY --from=teleport /src/teleport/tsh /usr/local/bin/
 
