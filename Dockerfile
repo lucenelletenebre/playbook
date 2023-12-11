@@ -1,4 +1,4 @@
-FROM alpine:3.18.5 AS teleport
+FROM alpine:3.19.0 AS teleport
 
 WORKDIR /src
 
